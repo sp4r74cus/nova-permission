@@ -39,7 +39,7 @@ class AttachToRole extends Action
     public function fields(NovaRequest $request)
     {
         return [
-            Select::make('Role')->options(Role::getModel()->get()->pluck('name',
+            Select::make('Role')->options(app(Role::getModel())->get()->pluck('name',
                 'id')->toArray())->displayUsingLabels(),
         ];
     }
